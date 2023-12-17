@@ -14,7 +14,7 @@
             "(^|/|\\.)(CMakeLists.txt)file$"
           ],
           "matchStrings": [
-            "datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?\\sENV GIT_TAG=(?<currentValue>.*)\\s"
+            "datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?\\sGIT_TAG=(?<currentValue>.*)\\s"
           ]
         },
         {
@@ -34,6 +34,13 @@
               "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
             ],
             "datasourceTemplate": "docker"
+        },
+        {
+            "customType": "regex",
+            "fileMatch": ["^ci.yml$"],
+            "matchStrings": [
+               "datasource=(?<datasource>.*?) depName=(?<depName>.*?)\\s.*?_VERSION:(?<currentValue>.*)\\s"
+            ]
         }
       ]
 }
