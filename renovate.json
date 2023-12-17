@@ -12,10 +12,10 @@
         {
           "customType": "regex",
           "fileMatch": [
-            "(^|/|\\.)(CMakeLists.txt)file$"
+            "(^|/|\\.)(CMakeLists.txt)$"
           ],
           "matchStrings": [
-            "GIT_TAG=(?<currentValue>.*) # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?"
+            "GIT_TAG=\"(?<currentValue>.*)\" # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?"
           ]
         },
         {
