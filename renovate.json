@@ -15,12 +15,14 @@
             "(^|/|\\.)(CMakeLists.txt)$"
           ],
           "matchStrings": [
-            "GIT_TAG=\"(?<currentValue>.*)\" # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?"
-          ]
+            "\\S*GIT_TAG=\"(?<currentValue>.*)\" # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( allowedVersions=(?<allowedVersions>.*?))?( versioning=(?<versioning>.*?))?"
+          ],
+          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+            "datasourceTemplate": "github-tags"
         },
         {
             "customType": "regex",
-            "fileMatch": ["(^|/|\\.)Eartfile$"],
+            "fileMatch": ["(^|/|\\.)Earthfile$"],
             "matchStrings": ["VERSION (?<currentValue>.*?)\\n"],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "earthly/earthly",
@@ -28,7 +30,7 @@
         },
         {
             "customType": "regex",
-            "fileMatch": ["(^|/|\\.)Eartfile$"],
+            "fileMatch": ["(^|/|\\.)Earthfile$"],
             "matchStringsStrategy": "any",
             "matchStrings": [
               "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
@@ -39,8 +41,10 @@
             "customType": "regex",
             "fileMatch": ["(^|/|\\.)ci.yml$"],
             "matchStrings": [
-               "\\s.*?_VERSION: (?<currentValue>.*)\\s # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)"
-            ]
+                ".*_VERSION:*.(?<currentValue>)\\s*#\\s*renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( allowedVersions=(?<allowedVersions>.*?))?\\s*"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+            "datasourceTemplate": "github-tags"
         }
       ]
 }

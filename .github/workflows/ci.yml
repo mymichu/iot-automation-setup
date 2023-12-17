@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 env:
-  EARTHLY_VERSION: v0.7.21 # renovate: datasource=github-tags depName=earthly/earthly
+  EARTHLY_VERSION: v0.7.21 # renovate: datasource=github-tags depName=earthly/earthly versioning=semver-coerced extractVersion=^v(?<version>.*)$
 
 jobs:
   build:
