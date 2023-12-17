@@ -20,7 +20,7 @@
         {
             "customType": "regex",
             "fileMatch": ["^Eartfile$"],
-            "matchStrings": ["VERSION=(?<currentValue>.*?)\\n"],
+            "matchStrings": ["VERSION (?<currentValue>.*?)\\n"],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "earthly/earthly",
             "versioningTemplate": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)$"
@@ -30,7 +30,6 @@
             "fileMatch": ["^Eartfile$"],
             "matchStringsStrategy": "any",
             "matchStrings": [
-              "ENV [A-Z]+_VERSION=(?<currentValue>.*) # (?<datasource>.*?)/(?<depName>.*?)(\\&versioning=(?<versioning>.*?))?\\s",
               "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
             ],
             "datasourceTemplate": "docker"

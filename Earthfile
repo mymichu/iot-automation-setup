@@ -1,6 +1,6 @@
 VERSION 0.7
 
-FROM alpine:3.19
+FROM alpine:3.18
 
 all:
     BUILD +buildarm 
