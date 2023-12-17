@@ -21,9 +21,9 @@
             "customType": "regex",
             "fileMatch": ["^Eartfile$"],
             "matchStrings": ["VERSION=(?<currentValue>.*?)\\n"],
-            "datasource": "github-tags",
-            "depName": "earthly/earthly",
-            "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)$"
+            "datasourceTemplate": "github-tags",
+            "depNameTemplate": "earthly/earthly",
+            "versioningTemplate": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)$"
         },
         {
             "customType": "regex",
