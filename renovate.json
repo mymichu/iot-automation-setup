@@ -11,9 +11,29 @@
         {
           "customType": "regex",
           "fileMatch": [
-            "(^|/|\\.)(Earthfile|CMakeLists.txt)file$",
-            "(^|/)(Earthfile|CMakeLists.txt)file[^/]*$"
+            "(^|/|\\.)(CMakeLists.txt)file$"
+          ],
+          "matchStrings": [
+            "datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?\\sENV GIT_TAG=(?<currentValue>.*)\\s"
           ]
+        },
+        {
+            "customType": "regex",
+            "fileMatch": ["^Eartfile$"],
+            "matchStrings": ["VERSION=(?<currentValue>.*?)\\n"],
+            "datasource": "github-tags",
+            "depName": "earthly/earthly",
+            "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)$"
+        },
+        {
+            "customType": "regex",
+            "fileMatch": ["^Eartfile$"],
+            "matchStringsStrategy": "any",
+            "matchStrings": [
+              "ENV [A-Z]+_VERSION=(?<currentValue>.*) # (?<datasource>.*?)/(?<depName>.*?)(\\&versioning=(?<versioning>.*?))?\\s",
+              "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
+            ],
+            "datasourceTemplate": "docker"
         }
       ]
 }
