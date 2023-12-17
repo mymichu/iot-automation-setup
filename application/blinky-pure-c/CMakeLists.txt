@@ -15,6 +15,7 @@ if (NOT CMAKE_CROSSCOMPILING)
     FetchContent_Declare(
         gtest3rd
         GIT_REPOSITORY "https://github.com/google/googletest.git" 
+        # renovate: datasource=github-tags depName=google/googletest
         GIT_TAG "v1.14.0"
         GIT_SHALLOW TRUE
         GIT_PROGRESS TRUE
@@ -30,6 +31,7 @@ if (NOT CMAKE_CROSSCOMPILING)
     FetchContent_Declare(
         abseil3rd
         GIT_REPOSITORY "https://github.com/abseil/abseil-cpp.git" 
+        # renovate: datasource=github-tags depName=abseil/abseil-cpp
         GIT_TAG "20230802.1"
         GIT_SHALLOW TRUE
         GIT_PROGRESS TRUE

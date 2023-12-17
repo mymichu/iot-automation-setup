@@ -9,6 +9,7 @@ set(STM_CMSIS_CORE_DIR ${CMAKE_SOURCE_DIR}/3rdparty/stm32_cmsis_core)
 FetchContent_Declare(
     stm32_cmsis_core
     GIT_REPOSITORY "https://github.com/STMicroelectronics/cmsis_core.git" 
+    # renovate: datasource=github-tags depName=STMicroelectronics/cmsis_core
     GIT_TAG "v5.6.0_cm4"
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
@@ -25,6 +26,7 @@ FetchContent_Declare(
     stm32_cmsis_device
 
     GIT_REPOSITORY "https://github.com/STMicroelectronics/cmsis_device_l4.git" 
+    # renovate: datasource=github-tags depName=STMicroelectronics/cmsis_device_l4
     GIT_TAG "v1.7.1"
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
