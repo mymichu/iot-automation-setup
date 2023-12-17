@@ -12,8 +12,7 @@ FetchContent_Declare(
     stm32_hal_l4_src
 
     GIT_REPOSITORY "https://github.com/STMicroelectronics/stm32l4xx_hal_driver.git" 
-    # renovate: datasource=github-tags depName=STMicroelectronics/stm32l4xx_hal_driver
-    GIT_TAG "v1.13.0"
+    GIT_TAG "v1.13.0" # renovate: datasource=github-tags depName=STMicroelectronics/stm32l4xx_hal_driver
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
     SOURCE_DIR "${STM_HAL_DIR}"

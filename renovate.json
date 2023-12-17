@@ -15,7 +15,7 @@
             "(^|/|\\.)(CMakeLists.txt)file$"
           ],
           "matchStrings": [
-            "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?\\sGIT_TAG=(?<currentValue>.*)\\s"
+            "GIT_TAG=(?<currentValue>.*) # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?) (allowedVersions=(?<allowedVersions>.*?))? (versioning=(?<versioning>.*?))?"
           ]
         },
         {
