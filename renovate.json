@@ -10,41 +10,46 @@
     "dependencyDashboard": true,
     "customManagers": [
         {
-          "customType": "regex",
-          "fileMatch": [
-            "(^|/|\\.)(CMakeLists.txt)$"
-          ],
-          "matchStrings": [
-            "\\S*GIT_TAG=\"(?<currentValue>.*)\" # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( allowedVersions=(?<allowedVersions>.*?))?( versioning=(?<versioning>.*?))?"
-          ],
-          "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-            "datasourceTemplate": "github-tags"
-        },
+            "fileMatch": ["(^|/|\\.)CMakeLists\\.txt$"],
+            "matchStrings": [
+              "\\s*GIT_TAG\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\srenovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+allowedVersions=(?<allowedVersions>[^\\s]+))?(?:\\s+versioning=(?<versioning>[^\\s]+))?"
+            ],
+            "datasourceTemplate": "github-tags",
+            "versioningTemplate": "semver"
+          },
         {
             "customType": "regex",
-            "fileMatch": ["(^|/|\\.)Earthfile$"],
-            "matchStrings": ["VERSION (?<currentValue>.*?)\\n"],
+            "fileMatch": [
+                "(^|/|\\.)Earthfile$"
+            ],
+            "matchStrings": [
+                "VERSION (?<currentValue>.*?)\\n"
+            ],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "earthly/earthly",
             "versioningTemplate": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)$"
         },
         {
             "customType": "regex",
-            "fileMatch": ["(^|/|\\.)Earthfile$"],
+            "fileMatch": [
+                "(^|/|\\.)Earthfile$"
+            ],
             "matchStringsStrategy": "any",
             "matchStrings": [
-              "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
+                "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
             ],
             "datasourceTemplate": "docker"
         },
         {
             "customType": "regex",
-            "fileMatch": ["(^|/|\\.)ci.yml$"],
+            "fileMatch": [
+              "(^|\\/|\\.)ci\\.yml$"
+            ],
             "matchStrings": [
-                ".*_VERSION:*.(?<currentValue>)\\s*#\\s*renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( allowedVersions=(?<allowedVersions>.*?))?\\s*"
+              ".*EARTHLY_VERSION:.*(?<currentValue>.*)\\s*#\\s*renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*"
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
             "datasourceTemplate": "github-tags"
-        }
-      ]
+          }
+    ]
 }
