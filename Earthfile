@@ -1,5 +1,5 @@
-# renovate: datasource=github-tags depName=earthly/earthly versioning=regex:^v(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$
-VERSION 0.7.21
+# renovate: datasource=github-tags depName=earthly/earthly versioning=regex:^v(?<major>\d+)\.(?<minor>\d+)$
+VERSION 0.7
 
 # renovate: datasource=docker versioning=docker
 FROM alpine:3.19
