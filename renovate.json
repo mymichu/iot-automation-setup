@@ -20,7 +20,7 @@
         },
         {
             "customType": "regex",
-            "fileMatch": ["^Eartfile$"],
+            "fileMatch": ["(^|/|\\.)Eartfile$"],
             "matchStrings": ["VERSION (?<currentValue>.*?)\\n"],
             "datasourceTemplate": "github-tags",
             "depNameTemplate": "earthly/earthly",
@@ -28,7 +28,7 @@
         },
         {
             "customType": "regex",
-            "fileMatch": ["^Eartfile$"],
+            "fileMatch": ["(^|/|\\.)Eartfile$"],
             "matchStringsStrategy": "any",
             "matchStrings": [
               "FROM (?<depName>\\S*):(?<currentValue>\\S*)"
@@ -37,7 +37,7 @@
         },
         {
             "customType": "regex",
-            "fileMatch": ["^ci.yml$"],
+            "fileMatch": ["(^|/|\\.)ci.yml$"],
             "matchStrings": [
                "\\s.*?_VERSION: (?<currentValue>.*)\\s # renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)"
             ]
