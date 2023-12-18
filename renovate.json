@@ -10,12 +10,14 @@
     "dependencyDashboard": true,
     "customManagers": [
         {
-            "fileMatch": ["(^|/|\\.)CMakeLists\\.txt$"],
+            "fileMatch": [
+                "(^|/|\\.)CMakeLists\\.txt$"
+            ],
             "matchStrings": [
-              "\\s*GIT_TAG\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\srenovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(\\s+allowedVersions=(?<allowedVersions>[^\\s]+))?(\\s+versioning=(?<versioning>[^\\s]+))?"
+                "\\s*GIT_TAG\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\srenovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(\\s+allowedVersions=(?<allowedVersions>[^\\s]+))?(\\s+versioning=(?<versioning>[^\\s]+))?"
             ],
             "datasourceTemplate": "github-tags"
-          },
+        },
         {
             "customType": "regex",
             "fileMatch": [
@@ -42,13 +44,12 @@
         {
             "customType": "regex",
             "fileMatch": [
-              "(^|\\/|\\.)ci\\.yml$"
+                "(^|\\/|\\.)ci\\.yml$"
             ],
             "matchStrings": [
-              ".*EARTHLY_VERSION:.*(?<currentValue>.*)\\s*#\\s*renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*"
+                "\\s*.*_VERSION:\\s+(?<currentValue>.*)\\s+#\\srenovate:\\s+datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)\\s+(\\s+versioning=(?<versioning>.*?))?\\s*"
             ],
-            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
             "datasourceTemplate": "github-tags"
-          }
+        }
     ]
 }
