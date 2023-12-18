@@ -12,7 +12,7 @@
         {
             "fileMatch": ["(^|/|\\.)CMakeLists\\.txt$"],
             "matchStrings": [
-              "\\s*GIT_TAG\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\srenovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(?:\\s+allowedVersions=(?<allowedVersions>[^\\s]+))?(?:\\s+versioning=(?<versioning>[^\\s]+))?"
+              "\\s*GIT_TAG\\s+\"(?<currentValue>[^\"]+)\"\\s+#\\srenovate:\\s+datasource=(?<datasource>[^\\s]+)\\s+depName=(?<depName>[^\\s]+)(\\s+allowedVersions=(?<allowedVersions>[^\\s]+))?(\\s+versioning=(?<versioning>[^\\s]+))?"
             ],
             "datasourceTemplate": "github-tags"
           },
