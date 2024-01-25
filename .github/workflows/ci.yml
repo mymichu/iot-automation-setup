@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
 env:
-  EARTHLY_VERSION: v0.8.1 # renovate: datasource=github-tags depName=earthly/earthly
+  EARTHLY_VERSION: v0.8.2 # renovate: datasource=github-tags depName=earthly/earthly
 
 jobs:
   build:
