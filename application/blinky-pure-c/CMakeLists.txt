@@ -31,7 +31,7 @@ if (NOT CMAKE_CROSSCOMPILING)
         abseil3rd
         GIT_REPOSITORY "https://github.com/abseil/abseil-cpp.git" 
         
-        GIT_TAG "20240116.0" # renovate: datasource=github-tags depName=abseil/abseil-cpp
+        GIT_TAG "20240116.1" # renovate: datasource=github-tags depName=abseil/abseil-cpp
         GIT_SHALLOW TRUE
         GIT_PROGRESS TRUE
         SOURCE_DIR "${ABSEIL_DIR}"
