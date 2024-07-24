@@ -25,7 +25,7 @@ FetchContent_Declare(
     stm32_cmsis_device
 
     GIT_REPOSITORY "https://github.com/STMicroelectronics/cmsis_device_l4.git" 
-    GIT_TAG "v1.7.3" # renovate: datasource=github-tags depName=STMicroelectronics/cmsis_device_l4
+    GIT_TAG "v1.7.4" # renovate: datasource=github-tags depName=STMicroelectronics/cmsis_device_l4
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
     SOURCE_DIR "${STM_CMSIS_DEVICE_DIR}"
