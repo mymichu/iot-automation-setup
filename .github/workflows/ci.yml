@@ -19,7 +19,7 @@ jobs:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Put back the git branch into git (Earthly uses it for tagging)
       run: |
         branch=""
